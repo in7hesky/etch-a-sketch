@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sketch</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/script.js" type="module" defer></script>
+    <script src="./scripts/board.js" type="module"></script>
+    <script src="./scripts/controller.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="options">
+            <button class="eraser">Eraser</button>
+            <div class="switcher">
+                <label>columns:</label>
+                <div class="column-buttons">
+                    <button class="minus">-</button>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="switcher">
+                <label>rows:</label>
+                <div class="row-buttons">
+                    <button class="minus">-</button>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="count-bar">
+            <span class="count-column">16</span>x<span class="count-row">16</span>
+        </div>
+    </div>
+</body>
+</html>

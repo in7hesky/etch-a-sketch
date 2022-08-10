@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    background: aquamarine;
+    width: 90%;
+    margin: 0 auto 0;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: fit-content;
+    gap: 5px
+}
+
+.count-bar {
+    position: absolute;
+    right: 20px;
+}
+
+.switcher {
+    text-align: center;
+}
+
+.column-buttons, .row-buttons {
+    display: flex;
+}
+
+.minus, .plus {
+    flex: 1
+}
+
+.board {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.pixel {
+    width: 15px;
+    height: 15px;
+    background: palegoldenrod;
+    border: 1px solid black;
+}
