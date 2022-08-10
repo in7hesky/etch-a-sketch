@@ -83,3 +83,7 @@ button, .palette {
     flex: 1;
     border: 1px solid black;
 }
+
+.picked {
+    transform: scale(1.1);
+}

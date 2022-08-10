@@ -1,5 +1,6 @@
 export class Pen {
     #mouseDown = false
+    #isEraser = false
     
     constructor() {
         this.palette = document.querySelector(".palette")
@@ -12,11 +13,12 @@ export class Pen {
         this.updateColor()
     }
 
+    toggleEraser() {
+        this.#isEraser = !this.#isEraser
+    }
+
     updateColor() {
         this.trigger.style.backgroundColor = this.color
-        // document.querySelectorAll(".pixel").forEach( pixel => {
-        //     pixel.style.backgroundColor = this.color
-        // })
     }
     
     bindDraw() {
@@ -29,7 +31,7 @@ export class Pen {
         document.querySelectorAll(".pixel").forEach( pixel => {
             pixel.addEventListener("mouseover", (e) => {
                 if(!this.#mouseDown) return
-                e.target.style.backgroundColor = this.color;
+                e.target.style.backgroundColor = this.#isEraser ? "transparent" : this.color;
             })
         })
     }

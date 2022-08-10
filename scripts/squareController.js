@@ -5,6 +5,7 @@ export class SquareController {
         this.board = board
         this.pen = new Pen()
 
+        this.#bindEraser()
         this.#bindSlider()
         this.#bindClear()
     }
@@ -14,6 +15,14 @@ export class SquareController {
         this.pen.bindDraw()
         this.pen.updateColor()
         this.#updateResolutionView(this.board.getResolutionCounter())
+    }
+
+    #bindEraser() {
+        document.querySelector(".eraser")
+            .addEventListener("click", (e) => {
+                this.pen.toggleEraser()
+                e.target.classList.toggle("picked")
+            })
     }
 
     #bindClear() {
