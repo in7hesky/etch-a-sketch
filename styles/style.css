@@ -57,10 +57,10 @@ button, .palette {
 }
 
 .board {
-    margin: 0 auto;
+    margin-left: auto;
     background: white;
-    width: 500px;
-    height: 500px;
+    width: 750px;
+    height: 750px;
     display: flex;
     justify-content: center;
 }
@@ -77,6 +77,6 @@ button, .palette {
 }
 
 .pixel {
-    opacity: 0;
     flex: 1;
+    border: 1px solid black;
 }

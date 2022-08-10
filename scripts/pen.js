@@ -14,24 +14,24 @@ export class Pen {
 
     updateColor() {
         this.trigger.style.backgroundColor = this.color
-        document.querySelectorAll(".pixel").forEach( pixel => {
-            pixel.style.backgroundColor = this.color
-        })
+        // document.querySelectorAll(".pixel").forEach( pixel => {
+        //     pixel.style.backgroundColor = this.color
+        // })
     }
     
     bindDraw() {
-       document.addEventListener("mousedown", () => {
+        document.addEventListener("mousedown", () => {
            this.#mouseDown = true
-       })
-       document.addEventListener("mouseup", () => {
+        })
+        document.addEventListener("mouseup", () => {
            this.#mouseDown = false
-       }) 
-       document.querySelectorAll(".pixel").forEach( pixel => {
-           pixel.addEventListener("mouseenter", (e) => {
-               if(!this.#mouseDown) return
-               e.target.style.opacity = "100%";
-           })
-       })
+        })
+        document.querySelectorAll(".pixel").forEach( pixel => {
+            pixel.addEventListener("mouseover", (e) => {
+                if(!this.#mouseDown) return
+                e.target.style.backgroundColor = this.color;
+            })
+        })
     }
     
     #bindColor() {

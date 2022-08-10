@@ -7,17 +7,10 @@ export class SquareController {
     }
 
     changeResolution(value) {
-        let initialCounter = this.board.getColumnCounter()
-        if (value > initialCounter) {
-            this.board.addColumns(value - initialCounter)
-            this.board.addRows(value - initialCounter)
-        } else if (value < initialCounter) {
-            this.board.removeColumns(initialCounter - value)
-            this.board.removeRows(initialCounter - value)
-        }
+        this.board.setResolution(value)
         this.pen.bindDraw()
         this.pen.updateColor()
-        this.#updateResolutionView(this.board.getColumnCounter())
+        this.#updateResolutionView(this.board.getResolutionCounter())
     }
     
     #updateResolutionView(current) {

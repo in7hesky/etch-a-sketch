@@ -1,59 +1,39 @@
 export class Board {
-    #columnCounter = 0
-    #rowCounter = 0
+    #resolutionCounter = 0
     
-    constructor(columns = 16, rows = 16) {
+    constructor(resolution = 16) {
+        this.createBoard()
+        this.setResolution(resolution)
+    }
+    
+    getResolutionCounter() {return this.#resolutionCounter}
+
+
+    setResolution(amount) {
+        if (this.board.childNodes.length !== 0) {
+            this.board.remove()
+            this.createBoard()
+        }
+        let column = document.createElement("div")
+        column.classList.add("column")
+
+        let pixel = document.createElement("div")
+        pixel.classList.add("pixel")
+
+        for (let i = 0; i < amount; i++) {
+            column.append(pixel.cloneNode())
+        }
+
+        for (let i = 0; i < amount; i++) {
+            this.board.append(column.cloneNode(true))
+        }
+
+        this.#resolutionCounter = amount
+    }
+
+    createBoard() {
         this.board = document.createElement("div")
         this.board.classList.add("board")
         document.querySelector(".container").append(this.board)
-
-        this.addColumns(columns)
-        this.addRows(rows)
-    }
-    
-    getColumnCounter() {return this.#columnCounter}
-    
-    getRowCounter() {return this.#rowCounter}
-    
-    removeColumns(amount) {
-        for (let i = 0; i < amount; i++) {
-            this.board.lastChild.remove()
-            this.#columnCounter--
-        }
-    }
-    
-    removeRows(amount) {
-        this.board.childNodes.forEach( column => {
-            for (let i = 0; i < amount; i++) {
-                column.lastChild.remove()
-            }
-        })
-        this.#rowCounter -= amount
-    }
-
-    addColumns(amount) {
-        let column
-        if (this.board.childNodes.length !== 0) {
-            column = this.board.lastChild.cloneNode(true)
-            column.childNodes.forEach( pixel => pixel.style.opacity = "0")
-        } else {
-            column = document.createElement("div")
-            column.classList.add("column")
-        }
-        for (let i = 0; i < amount; i++) {
-            this.#columnCounter++
-            this.board.append(column.cloneNode(true))
-        }
-    }
-
-    addRows(amount) {
-        document.querySelectorAll(".column").forEach( column => {
-            for (let i = 0; i < amount; i++) {
-                let row = document.createElement("div")
-                row.classList.add("pixel")
-                this.#rowCounter++
-                column.append(row)
-            }
-        })
     }
 }
