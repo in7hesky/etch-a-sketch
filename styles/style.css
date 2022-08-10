@@ -3,11 +3,24 @@
 }
 
 body {
+    font-family: Helvetica, serif;
     margin: 0;
+    background: #F7ECDE;
+    color: #138584;
 }
 
 button, .palette {
     cursor: pointer;
+}
+
+button {
+    font-family: serif;
+    background: #F7ECDE;
+    border: none;
+    border-radius: 3px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0.5rem
 }
 
 .title {
@@ -19,17 +32,18 @@ button, .palette {
     display: flex;
     gap: 30px;
     width: fit-content;
-    background: aquamarine;
+    background: #E9DAC1;
     margin: 0 auto 0;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 3px 3px 10px grey;
 }
 
 .options {
     display: flex;
     flex-direction: column;
     width: fit-content;
-    gap: 5px
+    gap: 10px
 }
 
 .palette {
@@ -60,8 +74,12 @@ button, .palette {
     cursor: pointer;
 }
 
+.resolution {
+    font-weight: bold;
+}
+
 .board {
-    background: white;
+    background: #F7ECDE;
     width: 40vw;
     height: 40vw;
     display: flex;
@@ -81,9 +99,25 @@ button, .palette {
 
 .pixel {
     flex: 1;
-    border: 1px solid black;
+    box-shadow: 0 1px 2px grey;
+    border-radius: 1px;
+}
+
+.eraser {
+    transition: all 0.2s;
+}
+
+.clear {
+    transition: all 0.2s;
+}
+
+
+
+.clear:active{
+    background: #9ED2C6;
 }
 
 .picked {
     transform: scale(1.1);
+    background: #9ED2C6;
 }
