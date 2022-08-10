@@ -4,11 +4,15 @@
 
 body {
     margin: 0;
-    padding: 30px
 }
 
 button, .palette {
     cursor: pointer;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .container {
