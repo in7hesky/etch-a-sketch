@@ -9,7 +9,5 @@ const controller = new SquareController(new Board(INIT_COLUMNS, INIT_ROWS))
 initButtons()
 
 function initButtons() {
-    document.querySelector(".slider").addEventListener("input", (e) => {
-        controller.changeResolution(e.target.value)
-    })
+
 }

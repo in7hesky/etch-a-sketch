@@ -4,6 +4,9 @@ export class SquareController {
     constructor(board) {
         this.board = board
         this.pen = new Pen()
+
+        this.#bindSlider()
+        this.#bindClear()
     }
 
     changeResolution(value) {
@@ -11,6 +14,20 @@ export class SquareController {
         this.pen.bindDraw()
         this.pen.updateColor()
         this.#updateResolutionView(this.board.getResolutionCounter())
+    }
+
+    #bindClear() {
+        document.querySelector(".clear")
+            .addEventListener("click", () => {
+                this.changeResolution(this.board.getResolutionCounter())
+            })
+    }
+
+    #bindSlider() {
+        document.querySelector(".slider")
+            .addEventListener("input", (e) => {
+            this.changeResolution(e.target.value)
+        })
     }
     
     #updateResolutionView(current) {
