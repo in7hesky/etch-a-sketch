@@ -12,23 +12,12 @@
     <div class="container">
         <div class="options">
             <button class="eraser">Eraser</button>
-            <div class="switcher">
-                <label>columns:</label>
-                <div class="column-buttons">
-                    <button class="minus">-</button>
-                    <button class="plus">+</button>
-                </div>
+            <div class="slider-container">
+                <label class="slider-view">
+                    <span class="resolution">16x16</span>
+                    <input type="range" min="1" max="100" value="16" class="slider">
+                </label>
             </div>
-            <div class="switcher">
-                <label>rows:</label>
-                <div class="row-buttons">
-                    <button class="minus">-</button>
-                    <button class="plus">+</button>
-                </div>
-            </div>
-        </div>
-        <div class="count-bar">
-            <span class="count-column">16</span>x<span class="count-row">16</span>
         </div>
     </div>
 </body>

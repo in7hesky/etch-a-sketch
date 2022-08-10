@@ -1,8 +1,8 @@
 import {Board} from "./board.js";
 import {Controller} from "./controller.js";
 
-const INIT_COLUMNS = 5
-const INIT_ROWS = 5
+const INIT_COLUMNS = 16
+const INIT_ROWS = 16
 
 const controller = new Controller(new Board(INIT_COLUMNS, INIT_ROWS))
 
