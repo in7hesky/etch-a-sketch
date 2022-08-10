@@ -15,7 +15,8 @@ export class SquareController {
             this.board.removeColumns(initialCounter - value)
             this.board.removeRows(initialCounter - value)
         }
-        
+        this.pen.bindDraw()
+        this.pen.updateColor()
         this.#updateResolutionView(this.board.getColumnCounter())
     }
     

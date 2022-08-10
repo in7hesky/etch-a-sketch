@@ -8,7 +8,7 @@ export class Pen {
         
         this.#bindTrigger()
         this.#bindColor()
-        this.#bindDraw()
+        this.bindDraw()
         this.updateColor()
     }
 
@@ -19,7 +19,7 @@ export class Pen {
         })
     }
     
-    #bindDraw() {
+    bindDraw() {
        document.addEventListener("mousedown", () => {
            console.log("mousedown")
            this.#mouseDown = true

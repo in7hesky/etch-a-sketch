@@ -72,7 +72,6 @@ button, .palette {
 }
 
 .pixel {
-    background: pink;
     opacity: 0;
     flex: 1;
 }
