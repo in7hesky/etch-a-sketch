@@ -21,7 +21,6 @@ export class Pen {
     
     bindDraw() {
        document.addEventListener("mousedown", () => {
-           console.log("mousedown")
            this.#mouseDown = true
        })
        document.addEventListener("mouseup", () => {

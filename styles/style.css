@@ -65,6 +65,11 @@ button, .palette {
     justify-content: center;
 }
 
+.board > * {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
 .column {
     display: flex;
     flex-direction: column;
