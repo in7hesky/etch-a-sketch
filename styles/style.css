@@ -7,7 +7,7 @@ body {
     padding: 30px
 }
 
-button {
+button, .palette {
     cursor: pointer;
 }
 
@@ -28,15 +28,37 @@ button {
     gap: 5px
 }
 
+.palette {
+    align-self: center;
+    display: none;
+}
+
+.trigger {
+    cursor: pointer;
+    display: inline-block;
+    background: palegoldenrod;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid grey;
+}
+
 .slider-view {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.slider {
+    cursor: pointer;
+}
+
 .board {
     margin: 0 auto;
-    background: pink;
+    background: white;
     width: 500px;
     height: 500px;
     display: flex;
@@ -50,7 +72,7 @@ button {
 }
 
 .pixel {
+    background: pink;
+    opacity: 0;
     flex: 1;
-    background: palegoldenrod;
-    border: 1px solid black;
 }

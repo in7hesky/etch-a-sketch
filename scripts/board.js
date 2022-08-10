@@ -2,7 +2,7 @@ export class Board {
     #columnCounter = 0
     #rowCounter = 0
     
-    constructor(columns, rows) {
+    constructor(columns = 16, rows = 16) {
         this.board = document.createElement("div")
         this.board.classList.add("board")
         document.querySelector(".container").append(this.board)
@@ -11,12 +11,15 @@ export class Board {
         this.addRows(rows)
     }
     
+    getColumnCounter() {return this.#columnCounter}
+    
+    getRowCounter() {return this.#rowCounter}
+    
     removeColumns(amount) {
         for (let i = 0; i < amount; i++) {
             this.board.lastChild.remove()
             this.#columnCounter--
         }
-        return this.#columnCounter
     }
     
     removeRows(amount) {
@@ -26,13 +29,13 @@ export class Board {
             }
         })
         this.#rowCounter -= amount
-        return this.#rowCounter
     }
 
     addColumns(amount) {
         let column
         if (this.board.childNodes.length !== 0) {
             column = this.board.lastChild.cloneNode(true)
+            column.childNodes.forEach( pixel => pixel.style.opacity = "0")
         } else {
             column = document.createElement("div")
             column.classList.add("column")
@@ -41,7 +44,6 @@ export class Board {
             this.#columnCounter++
             this.board.append(column.cloneNode(true))
         }
-        return this.#columnCounter
     }
 
     addRows(amount) {
@@ -53,6 +55,5 @@ export class Board {
                 column.append(row)
             }
         })
-        return this.#rowCounter
     }
 }

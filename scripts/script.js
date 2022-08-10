@@ -1,29 +1,15 @@
 import {Board} from "./board.js";
-import {Controller} from "./controller.js";
+import {SquareController} from "./squareController.js";
 
 const INIT_COLUMNS = 16
 const INIT_ROWS = 16
 
-const controller = new Controller(new Board(INIT_COLUMNS, INIT_ROWS))
+const controller = new SquareController(new Board(INIT_COLUMNS, INIT_ROWS))
 
 initButtons()
 
 function initButtons() {
-    document.querySelector(".column-buttons > .minus")
-        .addEventListener("click", () => {
-            controller.minusColumn()
-        })
-    document.querySelector(".column-buttons > .plus")
-        .addEventListener("click", () => {
-            controller.plusColumn()
-        })
-    
-    document.querySelector(".row-buttons > .minus")
-        .addEventListener("click", () => {
-            controller.minusRow()
-        })
-    document.querySelector(".row-buttons > .plus")
-        .addEventListener("click", () => {
-            controller.plusRow()
-        })
+    document.querySelector(".slider").addEventListener("input", (e) => {
+        controller.changeResolution(e.target.value)
+    })
 }
