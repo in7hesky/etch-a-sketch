@@ -121,3 +121,25 @@ button {
     transform: scale(1.1);
     background: #9ED2C6;
 }
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column-reverse;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .board {
+        width: 70vw;
+        height: 70vw;
+    }
+
+    .trigger {
+        width: 35px;
+        height: 35px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+}
