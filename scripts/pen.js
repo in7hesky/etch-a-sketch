@@ -28,9 +28,13 @@ export class Pen {
         document.addEventListener("mouseup", () => {
            this.#mouseDown = false
         })
+
         document.querySelectorAll(".pixel").forEach( pixel => {
             pixel.addEventListener("mouseover", (e) => {
                 if(!this.#mouseDown) return
+                e.target.style.backgroundColor = this.#isEraser ? "transparent" : this.color;
+            })
+            pixel.addEventListener("mousedown", (e) => {
                 e.target.style.backgroundColor = this.#isEraser ? "transparent" : this.color;
             })
         })
